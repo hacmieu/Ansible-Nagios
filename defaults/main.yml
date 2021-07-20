@@ -2,6 +2,7 @@
 # defaults file for nagios
 nrpe_plugin_dir: /usr/lib/nagios/plugins
 
+
 # Directory that will be used as the location for the downloads§
 nagios_download_dir: "{{ ansible_env.HOME }}/nagios"
 
@@ -11,6 +12,9 @@ nagios_admins_group: 'sysadmin'
 nagios_version: 4.4.6
 nagios_plugins_version: 2.3.3
 nrpe_version: 4.0.3
+
+# linux library aarch64-linux-gnu or x86_64-linux-gnu
+linux_gnu: aarch64-linux-gnu
 
 # Define the download url for the Nagios Core source files and the version you want to use.
 nagios_url: "https://assets.nagios.com/downloads/nagioscore/releases/nagios-{{ nagios_version }}.tar.gz"
@@ -24,6 +28,8 @@ nagios_src: "nagios-{{ nagios_version }}"
 nagios_pluginsurl: "http://www.nagios-plugins.org/download/nagios-plugins-{{ nagios_plugins_version }}.tar.gz"
 # This is the directory where the Plugin source files will be placed, this should be
 # the directory which is created when the download file is unpacked when runnint
+# Define the download url for the Plugins and the version you want to use. (by hvu)
+nagios_plugins_config_guess_url: "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD"
 # tar -xzvf nagios-plugins-2.1.1.tar.gz
 nagios_pluginssrc: "nagios-plugins-{{ nagios_plugins_version }}"
 
@@ -33,7 +39,7 @@ nagios_monitoring_command_group: nagcmd
 # This is a list of users allowed to login to the nagios web frontend
 nagios_users:
   - user: nagiosadmin
-    pass: Password1change
+    pass: Password4change
 
 #### nrpe-client ####
 
@@ -45,7 +51,7 @@ nagios_users:
 # require the distributions Nagios package to be installed.
 # nrpe_url: "http://sourceforge.net/projects/nagios/files/nrpe-{{ nrpe_version | regex_replace('(\\d+)\\..*', '\\1') }}.x/nrpe-{{ nrpe_version }}/nrpe-{{ nrpe_version }}.tar.gz"
 # nrpe_url: "https://downloads.sourceforge.net/project/nagios/nrpe-{{ nrpe_version | regex_replace('(\\d+)\\..*', '\\1') }}.x/nrpe-{{ nrpe_version }}.tar.gz"
-nrpe_url: "https://downloads.sourceforge.net/project/nagios/nrpe-{{ nrpe_version | regex_replace('(\\d+)\\..*', '\\1') }}.x//nrpe-{{ nrpe_version }}/nrpe-{{ nrpe_version }}.tar.gz"
+nrpe_url: "https://downloads.sourceforge.net/project/nagios/nrpe-{{ nrpe_version | regex_replace('(\\d+)\\..*', '\\1') }}.x/nrpe-{{ nrpe_version }}/nrpe-{{ nrpe_version }}.tar.gz"
 nrpe_src: "nrpe-{{ nrpe_version }}"
 
 # Location of monitoring plugins
