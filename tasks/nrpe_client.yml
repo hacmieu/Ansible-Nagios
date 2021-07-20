@@ -31,8 +31,9 @@
 - name: Unpack NRPE source files
   shell: cd {{ nagios_download_dir }} && tar -xzvf {{ nrpe_src }}.tar.gz creates={{ nagios_download_dir }}/{{ nrpe_src }}
 
-- name: Configure NRPE
-  shell: ./configure --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu  # noqa 305
+- name: Configure NRPE (by hvu)
+  #shell: ./configure --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu  # noqa 305
+  shell: ./configure --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/{{ linux_gnu | default(["x86_64-linux-gnu"]) }} #(by hvu) |default("x86_64-linux-gnu")
   args:
     chdir: "{{ nagios_download_dir }}/{{ nrpe_src }}"
     creates: "{{ nagios_download_dir }}/{{ nrpe_src }}/Makefile"
