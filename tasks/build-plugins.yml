@@ -6,6 +6,9 @@
 - name: Unpack Plugin source files
   shell: cd {{ nagios_download_dir }} && tar -xzvf {{ nagios_pluginssrc }}.tar.gz creates={{ nagios_download_dir }}/{{ nagios_pluginssrc }}
 
+- name: Download newest config.guess file (by hvu)
+  get_url: url={{ nagios_plugins_config_guess_url }} dest={{ nagios_download_dir }}/{{ nagios_pluginssrc }}/build-aux/config.guess
+
 - name: Configure Plugins
   shell: ./configure --with-nagios-user={{ nagios_monitoring_user }} --with-nagios-group=nagios --with-openssl=/usr/bin/openssl  # noqa 305
   args:
