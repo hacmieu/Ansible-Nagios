@@ -21,7 +21,6 @@ default_nagios_apache_packages:
   - libnet-snmp-perl 
   - gettext
   - libdbi-dev
-  - libfreeradius-client-dev
   - libldap2-dev
   - libmysqlclient-dev
   - dnsutils
