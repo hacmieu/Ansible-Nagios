@@ -20,7 +20,6 @@ default_nagios_apache_packages:
   - snmp 
   - libnet-snmp-perl 
   - gettext
-  - libpqxx3-dev
   - libdbi-dev
   - libfreeradius-client-dev
   - libldap2-dev
