@@ -39,7 +39,7 @@ nagios_monitoring_command_group: nagcmd
 # This is a list of users allowed to login to the nagios web frontend
 nagios_users:
   - user: nagiosadmin
-    pass: Password4change
+    pass: Password1change
 
 #### nrpe-client ####
 
@@ -67,7 +67,7 @@ nagios_object_dir: "{{nagios_base_dir}}/etc/objects"
 
 # if true, nagios_object_dir is a cfg_dir and nagios will
 # autoload all files ending in .cfg
-nagios_cfg_dir_enabled: false
+nagios_cfg_dir_enabled: true
 
 # id of nagios user
 nagios_user: nagios
