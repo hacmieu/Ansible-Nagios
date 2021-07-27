@@ -12,4 +12,9 @@
   include: client_windows.yml
   when: ansible_system == 'Win32NT'
 
+- name: Creates directory /root/nagios
+  file:
+    path: /root/nagios
+    state: directory
+
 - include: build-plugins.yml
