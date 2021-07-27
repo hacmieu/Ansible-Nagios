@@ -19,7 +19,9 @@ nrpe_command_timeout: 60
 nrpe_conf_dir: /etc/nagios
 # nrpe_plugin_dir: /usr/lib/nagios/plugins
 
-default_nagios_plugin_packages:
+default_nagios_prerequisite_packages:
+  - build-essential
+  - wget
   - libssl-dev
   - dnsutils
   - fping
@@ -50,10 +52,6 @@ default_nagios_plugin_packages:
   - smbclient
   - qstat
   - fping
-
-default_nagios_prerequisite_packages:
-  - build-essential
-  - wget
 
 default_nagios_nrpe_prerequisite_packages:
   - build-essential
