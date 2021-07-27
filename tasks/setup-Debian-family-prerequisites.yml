@@ -7,36 +7,36 @@
 - name: Install Prequisites for Ubuntu
   apt: name={{ item }} state=installed
   with_items:
-  - dnsutils
-  - fping
-  - libldap2-dev
-  - libpq-dev
-  - smbclient
-  - gawk
-  - libmysqlclient-dev
-  - unzip
-  - autoconf 
-  - gcc 
-  - libc6 
-  - libmcrypt-dev 
-  - make 
-  - libssl-dev 
-  - wget 
-  - bc 
-  - gawk 
-  - dc 
-  - build-essential 
-  - snmp 
-  - libnet-snmp-perl 
-  - gettext
-  - libdbi-dev
-  - libldap2-dev
-  - libmysqlclient-dev
-  - dnsutils
-  - smbclient
-  - qstat
-  - fping
-when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version|int > 12
+    - dnsutils
+    - fping
+    - libldap2-dev
+    - libpq-dev
+    - smbclient
+    - gawk
+    - libmysqlclient-dev
+    - unzip
+    - autoconf 
+    - gcc 
+    - libc6 
+    - libmcrypt-dev 
+    - make 
+    - libssl-dev 
+    - wget 
+    - bc 
+    - gawk 
+    - dc 
+    - build-essential 
+    - snmp 
+    - libnet-snmp-perl 
+    - gettext
+    - libdbi-dev
+    - libldap2-dev
+    - libmysqlclient-dev
+    - dnsutils
+    - smbclient
+    - qstat
+    - fping
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version|int > 12
 
 - name: Install apache packages
   apt:
