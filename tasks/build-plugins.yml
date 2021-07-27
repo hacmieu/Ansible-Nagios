@@ -1,4 +1,37 @@
 ---
+- name: Install Prequisites for Ubuntu
+  apt: update_cache=yes cache_valid_time=3600 name={{ item }} state=present
+  with_items:
+    - dnsutils
+    - fping
+    - libldap2-dev
+    - libpq-dev
+    - smbclient
+    - gawk
+    - libmysqlclient-dev
+    - unzip
+    - autoconf 
+    - gcc 
+    - libc6 
+    - libmcrypt-dev 
+    - make 
+    - libssl-dev 
+    - wget 
+    - bc 
+    - gawk 
+    - dc 
+    - build-essential 
+    - snmp 
+    - libnet-snmp-perl 
+    - gettext
+    - libdbi-dev
+    - libldap2-dev
+    - libmysqlclient-dev
+    - dnsutils
+    - smbclient
+    - qstat
+    - fping
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version|int > 16
 
 - name: Get Plugins
   get_url: url={{ nagios_pluginsurl }} dest={{ nagios_download_dir }}/{{ nagios_pluginssrc }}.tar.gz
