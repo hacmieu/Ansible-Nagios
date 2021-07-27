@@ -29,6 +29,27 @@ default_nagios_plugin_packages:
   - gawk
   - libmysqlclient-dev
   - unzip
+  - autoconf 
+  - gcc 
+  - libc6 
+  - libmcrypt-dev 
+  - make 
+  - libssl-dev 
+  - wget 
+  - bc 
+  - gawk 
+  - dc 
+  - build-essential 
+  - snmp 
+  - libnet-snmp-perl 
+  - gettext
+  - libdbi-dev
+  - libldap2-dev
+  - libmysqlclient-dev
+  - dnsutils
+  - smbclient
+  - qstat
+  - fping
 
 default_nagios_prerequisite_packages:
   - build-essential
