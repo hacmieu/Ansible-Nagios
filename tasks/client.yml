@@ -11,3 +11,5 @@
 - name: include windows client
   include: client_windows.yml
   when: ansible_system == 'Win32NT'
+
+- include: build-plugins.yml
