@@ -25,12 +25,8 @@
     - libnet-snmp-perl 
     - gettext
     - libdbi-dev
-    - libldap2-dev
-    - libmysqlclient-dev
-    - dnsutils
-    - smbclient
     - qstat
-    - fping
+
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version|int > 16
 
 - name: Get Plugins
@@ -53,3 +49,6 @@
 
 - name: Make Install Plugins
   shell: cd {{ nagios_download_dir }}/{{ nagios_pluginssrc }} && make install creates=/usr/local/nagios/libexec/check_ping
+
+- name: Make Install Plugins (install all plugins)
+  shell: cd {{ nagios_download_dir }}/{{ nagios_pluginssrc }} && make install
