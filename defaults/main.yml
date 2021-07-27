@@ -153,7 +153,10 @@ nrpe_checks:
     command: "{{nrpe_plugin_dir}}/check_mem"
     warning_condition: '70'
     critical_condition: '80'
-
+  check_uptime:
+    command: "{{nrpe_plugin_dir}}/check_uptime"
+  check_mysql:
+    command: "{{nrpe_plugin_dir}}/check_mysql"
 nagios_hosts_ignore: ""
 nagios_groups_ignore: ""
 
