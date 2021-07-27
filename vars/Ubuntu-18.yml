@@ -6,7 +6,37 @@ default_nagios_apache_packages:
   - libgd-dev
   - libapache2-mod-php
   - unzip
-
+  - libssl-dev
+  - dnsutils
+  - fping
+  - libldap2-dev
+  - libpq-dev
+  - smbclient
+  - gawk
+  - libmysqlclient-dev
+  - unzip
+  - autoconf 
+  - gcc 
+  - libc6 
+  - libmcrypt-dev 
+  - make 
+  - libssl-dev 
+  - wget 
+  - bc 
+  - gawk 
+  - dc 
+  - build-essential 
+  - snmp 
+  - libnet-snmp-perl 
+  - gettext
+  - libdbi-dev
+  - libldap2-dev
+  - libmysqlclient-dev
+  - dnsutils
+  - smbclient
+  - qstat
+  - fping
+  
 default_nagios_python_packages:
   - python-pip
   - python-setuptools
