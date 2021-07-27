@@ -155,11 +155,11 @@ nrpe_checks:
     critical_condition: '80'
   check_uptime:
     command: "{{nrpe_plugin_dir}}/check_uptime"
-    arning_condition: ''
+    warning_condition: ''
     critical_condition: ''
   check_mysql:
     command: "{{nrpe_plugin_dir}}/check_mysql"
-    arning_condition: ''
+    warning_condition: ''
     critical_condition: ''
 nagios_hosts_ignore: ""
 nagios_groups_ignore: ""
