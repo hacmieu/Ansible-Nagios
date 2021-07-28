@@ -5,7 +5,8 @@ default_nagios_apache_packages:
   - php-gd
   - libgd-dev
   - libapache2-mod-php
-
+  - unzip
+  
 default_nagios_python_packages:
   - python-pip
   - python-setuptools

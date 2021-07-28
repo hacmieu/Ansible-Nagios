@@ -147,18 +147,18 @@ nrpe_checks:
     parameters: "-A -i '.gvfs' -i /run/user -i /run/lxcfs -i /run/docker -i /var/lib/docker -i /var/lib/kubelet -i '/snap/*'"
   check_swap:
     command: "{{nrpe_plugin_dir}}/check_swap"
-    warning_condition: '30%'
-    critical_condition: '20%'
+    warning_condition: '20%'
+    critical_condition: '10%'
   check_mem:
     command: "{{nrpe_plugin_dir}}/check_mem"
     warning_condition: '70'
-    critical_condition: '80'
+    critical_condition: '85'
   check_uptime:
-    command: "{{nrpe_plugin_dir}}/check_uptime"
+    command: "{{nrpe_client_plugins_dir}}/check_uptime"
     warning_condition: ''
     critical_condition: ''
   check_mysql:
-    command: "{{nrpe_plugin_dir}}/check_mysql"
+    command: "{{nrpe_client_plugins_dir}}/check_mysql"
     warning_condition: ''
     critical_condition: ''
 nagios_hosts_ignore: ""

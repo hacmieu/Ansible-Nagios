@@ -36,6 +36,8 @@ default_nagios_prerequisite_packages:
   - libc6 
   - libmcrypt-dev 
   - make 
+  - libssl-dev 
+  - wget 
   - bc 
   - gawk 
   - dc 
@@ -44,7 +46,12 @@ default_nagios_prerequisite_packages:
   - libnet-snmp-perl 
   - gettext
   - libdbi-dev
+  - libldap2-dev
+  - libmysqlclient-dev
+  - dnsutils
+  - smbclient
   - qstat
+  - fping
 
 default_nagios_nrpe_prerequisite_packages:
   - build-essential
@@ -63,6 +70,7 @@ default_nagios_nrpe_prerequisite_packages:
   - libc6 
   - libmcrypt-dev 
   - make 
+  - libssl-dev 
   - wget 
   - bc 
   - gawk 
@@ -73,7 +81,11 @@ default_nagios_nrpe_prerequisite_packages:
   - gettext
   - libdbi-dev
   - libldap2-dev
+  - libmysqlclient-dev
+  - dnsutils
+  - smbclient
   - qstat
+  - fping
 
 default_nagios_python_packages:
   - python3-pip
